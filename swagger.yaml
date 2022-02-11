@@ -1,0 +1,66 @@
+swagger: '2.0'
+info:
+  description: Our web application  display excersises for the user to workout throughout the week.
+  version: 1.0.0
+  title: Fitness Track
+ 
+  contact:
+    email: s542301@nwmissouri.edu
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+tags:
+- name: Users
+  description: user creates an account by logging and giving the credentials
+- name: Excersises
+  description: Excersises are displayed for the user throughout the week.User sees particualar excersises for each day.
+
+paths:
+  /receivepoints:
+    post:
+      tags:
+      - users
+      summary: Can receive points from admin if excersises are completed
+      operationId: receive points
+      description: receive points to the users
+      responses:
+        201:
+          description: secured points
+          
+  /Scheduling :
+    get:
+      tags:
+      - Excersises
+      summary: user can schedule the excersises based on the intrest
+      description: If user isnt in mood of doing user can schedule,check the box if completed.
+      operationId: schedule
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        405:
+          description: Invalid input
+definitions:
+  Users:
+    type: object
+    required:
+    - id
+    - name
+    properties:
+      email-id:
+        type: string
+  Excersises:
+    required:
+    - name
+    properties:
+      name:
+        type: string
+      weekday:
+        type: string
+
+schemes:
+ - https
+#host: fitnessTrack.herokuapp.com
