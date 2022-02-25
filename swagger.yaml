@@ -63,4 +63,4 @@ definitions:
 
 schemes:
  - https
-#host: fitnessTrack.herokuapp.com
+host: fitness-trackk.herokuapp.com/
